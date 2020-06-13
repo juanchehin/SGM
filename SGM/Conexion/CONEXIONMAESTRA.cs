@@ -15,12 +15,16 @@ namespace SGM
 {
     class ConexionMaestra
     {
-		public static SqlConnection conexion = new SqlConnection(@"Data source=DESKTOP;Initial Catalog=BaseSGM;Integrated Security=True");    // Nombre servidor
+		public static SqlConnection conexion = new SqlConnection(@"Data source=DESKTOP\SQLEXPRESS;Initial Catalog=SGM;Integrated Security=True");    // Nombre servidor
 		
+
 		public static void abrir()
 		{
+
+			Console.WriteLine("Entro a conexion maestra abrir");
 			if ((int)conexion.State == 0)
 			{
+				MessageBox.Show("Se abrio la conexion");
 				conexion.Open();
 			}
 		}
@@ -28,6 +32,7 @@ namespace SGM
 		{
 			if (conexion.State == (System.Data.ConnectionState)1)
 			{
+				MessageBox.Show("Se cerro la conexion");
 				conexion.Close();
 			}
 		}

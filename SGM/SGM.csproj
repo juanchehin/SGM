@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionMaestra.cs" />
+    <Compile Include="Conexion\TamañoAutomaticoDatatable.cs" />
     <Compile Include="Modulos\usuariosok.cs">
       <SubType>Form</SubType>
     </Compile>
