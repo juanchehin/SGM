@@ -41,7 +41,6 @@
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelICONO = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,6 +53,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.lblId_usuario = new System.Windows.Forms.Label();
             this.lblnumeroIcono = new System.Windows.Forms.Label();
             this.LblAnuncioIcono = new System.Windows.Forms.Label();
@@ -76,6 +76,7 @@
             this.Label4 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
+            this.dlg1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -83,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panelICONO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -96,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -153,6 +154,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(310, 26);
             this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // menuStrip1
             // 
@@ -209,6 +211,7 @@
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datalistado.Size = new System.Drawing.Size(647, 597);
             this.datalistado.TabIndex = 3;
+            this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
             this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellDoubleClick);
             // 
             // Eli
@@ -221,7 +224,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.panel4.Controls.Add(this.panelICONO);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(21, 149);
@@ -229,45 +231,15 @@
             this.panel4.Size = new System.Drawing.Size(762, 539);
             this.panel4.TabIndex = 4;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.lblId_usuario);
-            this.panel5.Controls.Add(this.lblnumeroIcono);
-            this.panel5.Controls.Add(this.LblAnuncioIcono);
-            this.panel5.Controls.Add(this.ICONO);
-            this.panel5.Controls.Add(this.btnVolver);
-            this.panel5.Controls.Add(this.menuStrip2);
-            this.panel5.Controls.Add(this.txtrol);
-            this.panel5.Controls.Add(this.panel9);
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.txtcorreo);
-            this.panel5.Controls.Add(this.txtPassword);
-            this.panel5.Controls.Add(this.txtlogin);
-            this.panel5.Controls.Add(this.txtnombre);
-            this.panel5.Controls.Add(this.Label5);
-            this.panel5.Controls.Add(this.Label9);
-            this.panel5.Controls.Add(this.Label4);
-            this.panel5.Controls.Add(this.Label6);
-            this.panel5.Controls.Add(this.Label8);
-            this.panel5.Location = new System.Drawing.Point(49, 65);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(685, 301);
-            this.panel5.TabIndex = 605;
-            // 
             // panelICONO
             // 
             this.panelICONO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelICONO.Controls.Add(this.pictureBox11);
             this.panelICONO.Controls.Add(this.flowLayoutPanel2);
             this.panelICONO.Controls.Add(this.flowLayoutPanel1);
-            this.panelICONO.Location = new System.Drawing.Point(55, 349);
+            this.panelICONO.Location = new System.Drawing.Point(38, 97);
             this.panelICONO.Name = "panelICONO";
-            this.panelICONO.Size = new System.Drawing.Size(682, 411);
+            this.panelICONO.Size = new System.Drawing.Size(682, 515);
             this.panelICONO.TabIndex = 606;
             this.panelICONO.Visible = false;
             // 
@@ -281,6 +253,7 @@
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 1;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -394,6 +367,36 @@
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.lblId_usuario);
+            this.panel5.Controls.Add(this.lblnumeroIcono);
+            this.panel5.Controls.Add(this.LblAnuncioIcono);
+            this.panel5.Controls.Add(this.ICONO);
+            this.panel5.Controls.Add(this.btnVolver);
+            this.panel5.Controls.Add(this.menuStrip2);
+            this.panel5.Controls.Add(this.txtrol);
+            this.panel5.Controls.Add(this.panel9);
+            this.panel5.Controls.Add(this.panel8);
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.txtcorreo);
+            this.panel5.Controls.Add(this.txtPassword);
+            this.panel5.Controls.Add(this.txtlogin);
+            this.panel5.Controls.Add(this.txtnombre);
+            this.panel5.Controls.Add(this.Label5);
+            this.panel5.Controls.Add(this.Label9);
+            this.panel5.Controls.Add(this.Label4);
+            this.panel5.Controls.Add(this.Label6);
+            this.panel5.Controls.Add(this.Label8);
+            this.panel5.Location = new System.Drawing.Point(49, 65);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(685, 301);
+            this.panel5.TabIndex = 605;
             // 
             // lblId_usuario
             // 
@@ -610,12 +613,18 @@
             this.Label8.TabIndex = 600;
             this.Label8.Text = "Nombres y Apellidos:";
             // 
+            // dlg1
+            // 
+            this.dlg1.FileName = "dlg1";
+            this.dlg1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // usuariosok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(762, 691);
+            this.Controls.Add(this.panelICONO);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.panel3);
@@ -636,8 +645,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panelICONO.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -650,6 +657,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
@@ -707,7 +716,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lblId_usuario;
         private System.Windows.Forms.OpenFileDialog dlg;
-
+        private System.Windows.Forms.OpenFileDialog dlg1;
     }
 }
 

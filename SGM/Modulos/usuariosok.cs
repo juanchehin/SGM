@@ -120,6 +120,8 @@ namespace SGM
 
                         cmd.Parameters.AddWithValue("@Icono", ms.GetBuffer());
                         cmd.Parameters.AddWithValue("@NombreIcono", lblnumeroIcono.Text);
+                        cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
+
                         cmd.ExecuteNonQuery();
                         // con.Close();
                         ConexionMaestra.conexion.Close();
@@ -230,6 +232,7 @@ namespace SGM
 
         private void LblAnuncioIcono_Click(object sender, EventArgs e)
         {
+            CargarEstadoDeIconos();
             panelICONO.Visible = true;
         }
 
@@ -419,16 +422,16 @@ namespace SGM
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            dlg.InitialDirectory = "";
-            dlg.Filter = "Imagenes|*.jpg;*.png";
-            dlg.FilterIndex = 2;
-            dlg.Title = "Cargador de Imagenes ADA 369";
-            if (dlg.ShowDialog() == DialogResult.OK)
+            dlg1.InitialDirectory = "";
+            dlg1.Filter = "Imagenes|*.jpg;*.png";
+            dlg1.FilterIndex = 2;
+            dlg1.Title = "Cargador de Imagenes ADA 369";
+            if (dlg1.ShowDialog() == DialogResult.OK)
             {
                 ICONO.BackgroundImage = null;
-                ICONO.Image = new Bitmap(dlg.FileName);
+                ICONO.Image = new Bitmap(dlg1.FileName);
                 ICONO.SizeMode = PictureBoxSizeMode.Zoom;
-                lblnumeroIcono.Text = Path.GetFileName(dlg.FileName);
+                lblnumeroIcono.Text = Path.GetFileName(dlg1.FileName);
                 LblAnuncioIcono.Visible = false;
                 panelICONO.Visible = false;
             }
@@ -505,6 +508,11 @@ namespace SGM
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
             panel4.Visible = false;
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 
