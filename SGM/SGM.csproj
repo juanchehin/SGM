@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,6 +82,12 @@
     <Compile Include="Modulos\UsuariosPermisos\usuariosok.Designer.cs">
       <DependentUpon>usuariosok.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Ventas\VentasMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Ventas\VentasMenuPrincipal.Designer.cs">
+      <DependentUpon>VentasMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Modulos\Login\Login.resx">
@@ -88,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\UsuariosPermisos\usuariosok.resx">
       <DependentUpon>usuariosok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Ventas\VentasMenuPrincipal.resx">
+      <DependentUpon>VentasMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
