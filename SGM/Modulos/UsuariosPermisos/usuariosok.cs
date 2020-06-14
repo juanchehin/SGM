@@ -98,43 +98,56 @@ namespace SGM
             else
             {
                 if (txtnombre.Text != "")
+
                 {
-                    try
+                    Console.WriteLine("Entro a txtnombre.Text != ");
+                    if (txtrol.Text != "")
                     {
-                        Console.WriteLine("Entro a btnGuardar_Click");
-                        // SqlConnection con = new SqlConnection();
-                        ConexionMaestra.conexion.Open();
-                        // con.Open();
-                        SqlCommand cmd = new SqlCommand();
-                        cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@NombresApellidos", txtnombre.Text);
-                        cmd.Parameters.AddWithValue("@Login", txtlogin.Text);
-                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                        Console.WriteLine("Entro a txtrol.Text != ");
 
-                        cmd.Parameters.AddWithValue("@Correo", txtcorreo.Text);
-                        cmd.Parameters.AddWithValue("@Rol", txtrol.Text);
-                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                        ICONO.Image.Save(ms, ICONO.Image.RawFormat);
+                        // if (LblAnuncioIcono.Visible == false)
+
+                        // {
+                            Console.WriteLine("Entro a LblAnuncioIcono.Visible == false");
+
+                            try
+                            {
+                                Console.WriteLine("Entro a btnGuardar_Click");
+                                // SqlConnection con = new SqlConnection();
+                                ConexionMaestra.conexion.Open();
+                                // con.Open();
+                                SqlCommand cmd = new SqlCommand();
+                                cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@NombresApellidos", txtnombre.Text);
+                                cmd.Parameters.AddWithValue("@Login", txtlogin.Text);
+                                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+
+                                cmd.Parameters.AddWithValue("@Correo", txtcorreo.Text);
+                                cmd.Parameters.AddWithValue("@Rol", txtrol.Text);
+                                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                                ICONO.Image.Save(ms, ICONO.Image.RawFormat);
 
 
-                        cmd.Parameters.AddWithValue("@Icono", ms.GetBuffer());
-                        cmd.Parameters.AddWithValue("@NombreIcono", lblnumeroIcono.Text);
-                        cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
+                                cmd.Parameters.AddWithValue("@Icono", ms.GetBuffer());
+                                cmd.Parameters.AddWithValue("@NombreIcono", lblnumeroIcono.Text);
+                                cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
 
-                        cmd.ExecuteNonQuery();
-                        // con.Close();
-                        ConexionMaestra.conexion.Close();
-                        mostrar();
-                        panel4.Visible = false;
+                                cmd.ExecuteNonQuery();
+                                // con.Close();
+                                ConexionMaestra.conexion.Close();
+                                mostrar();
+                                panel4.Visible = false;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+
+                            }
+                            Conexion.TamañoAutomaticoDatatable.Multilinea(ref datalistado);
+
+                        // }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-
-                    }
-                    Conexion.TamañoAutomaticoDatatable.Multilinea(ref datalistado);
-
                 }
             }
            

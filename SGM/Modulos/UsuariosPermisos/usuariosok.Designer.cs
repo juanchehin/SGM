@@ -33,14 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.PictureBox2 = new System.Windows.Forms.PictureBox();
-            this.datalistado = new System.Windows.Forms.DataGridView();
-            this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panelICONO = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,6 +45,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
+            this.datalistado = new System.Windows.Forms.DataGridView();
+            this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblId_usuario = new System.Windows.Forms.Label();
             this.lblnumeroIcono = new System.Windows.Forms.Label();
@@ -79,11 +79,6 @@
             this.dlg1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panelICONO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -96,6 +91,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -147,97 +147,13 @@
             this.panel2.Size = new System.Drawing.Size(762, 47);
             this.panel2.TabIndex = 1;
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(55, 10);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(310, 26);
-            this.txtBuscar.TabIndex = 0;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(9, 10);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(43, 26);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 22);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.PictureBox2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(647, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(115, 597);
-            this.panel3.TabIndex = 2;
-            // 
-            // PictureBox2
-            // 
-            this.PictureBox2.BackColor = System.Drawing.Color.White;
-            this.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
-            this.PictureBox2.Location = new System.Drawing.Point(-38, 158);
-            this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(193, 185);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox2.TabIndex = 360;
-            this.PictureBox2.TabStop = false;
-            this.PictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
-            // 
-            // datalistado
-            // 
-            this.datalistado.AllowUserToAddRows = false;
-            this.datalistado.AllowUserToResizeRows = false;
-            this.datalistado.BackgroundColor = System.Drawing.Color.White;
-            this.datalistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eli});
-            this.datalistado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datalistado.Location = new System.Drawing.Point(0, 94);
-            this.datalistado.Name = "datalistado";
-            this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(647, 597);
-            this.datalistado.TabIndex = 3;
-            this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
-            this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellDoubleClick);
-            // 
-            // Eli
-            // 
-            this.Eli.HeaderText = "";
-            this.Eli.Image = ((System.Drawing.Image)(resources.GetObject("Eli.Image")));
-            this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eli.Name = "Eli";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(21, 149);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(762, 539);
-            this.panel4.TabIndex = 4;
-            // 
             // panelICONO
             // 
             this.panelICONO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelICONO.Controls.Add(this.pictureBox11);
             this.panelICONO.Controls.Add(this.flowLayoutPanel2);
             this.panelICONO.Controls.Add(this.flowLayoutPanel1);
-            this.panelICONO.Location = new System.Drawing.Point(38, 97);
+            this.panelICONO.Location = new System.Drawing.Point(17, 76);
             this.panelICONO.Name = "panelICONO";
             this.panelICONO.Size = new System.Drawing.Size(682, 515);
             this.panelICONO.TabIndex = 606;
@@ -367,6 +283,91 @@
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(55, 10);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(310, 26);
+            this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(9, 10);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(43, 26);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 22);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.PictureBox2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(647, 94);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(115, 597);
+            this.panel3.TabIndex = 2;
+            // 
+            // PictureBox2
+            // 
+            this.PictureBox2.BackColor = System.Drawing.Color.White;
+            this.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(-38, 158);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(193, 185);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 360;
+            this.PictureBox2.TabStop = false;
+            this.PictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            // 
+            // datalistado
+            // 
+            this.datalistado.AllowUserToAddRows = false;
+            this.datalistado.AllowUserToResizeRows = false;
+            this.datalistado.BackgroundColor = System.Drawing.Color.White;
+            this.datalistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eli});
+            this.datalistado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datalistado.Location = new System.Drawing.Point(0, 94);
+            this.datalistado.Name = "datalistado";
+            this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado.Size = new System.Drawing.Size(647, 597);
+            this.datalistado.TabIndex = 3;
+            this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
+            this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellDoubleClick);
+            // 
+            // Eli
+            // 
+            this.Eli.HeaderText = "";
+            this.Eli.Image = ((System.Drawing.Image)(resources.GetObject("Eli.Image")));
+            this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eli.Name = "Eli";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.panel4.Controls.Add(this.panelICONO);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(27, 100);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(762, 539);
+            this.panel4.TabIndex = 4;
             // 
             // panel5
             // 
@@ -624,7 +625,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(762, 691);
-            this.Controls.Add(this.panelICONO);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.panel3);
@@ -639,12 +639,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.panelICONO.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -657,6 +651,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICONO)).EndInit();
