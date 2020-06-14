@@ -61,7 +61,7 @@ namespace SGM.Modulos.Caja
                 ConexionMaestra.conexion.Close();
 
                 this.Hide();
-                VentasMenuPrincipal.VentasMenuPrincipalOk frm = new VentasMenuPrincipal.VentasMenuPrincipalOk();
+                Ventas.VentasMenuPrincipal frm = new Ventas.VentasMenuPrincipal();
                 frm.ShowDialog();
                 this.Hide();
 
@@ -141,7 +141,7 @@ namespace SGM.Modulos.Caja
                 ConexionMaestra.conexion.Close();
 
                 this.Hide();
-                VentasMenuPrincipal.VentasMenuPrincipalOk frm = new VentasMenuPrincipal.VentasMenuPrincipalOk();
+                Ventas.VentasMenuPrincipal frm = new Ventas.VentasMenuPrincipal();
                 frm.ShowDialog();
                 this.Hide();
 

@@ -138,8 +138,9 @@
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.PanelRestaurarCuenta);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(183, 24);
+            this.panel1.Location = new System.Drawing.Point(197, 29);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(904, 447);
             this.panel1.TabIndex = 2;
@@ -239,7 +240,7 @@
             this.panel2.Controls.Add(this.btn3);
             this.panel2.Controls.Add(this.btn1);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(304, 12);
+            this.panel2.Location = new System.Drawing.Point(394, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 641);
             this.panel2.TabIndex = 5;
@@ -552,7 +553,6 @@
             // PanelRestaurarCuenta
             // 
             this.PanelRestaurarCuenta.Controls.Add(this.dataGridView1);
-            this.PanelRestaurarCuenta.Controls.Add(this.richTextBox1);
             this.PanelRestaurarCuenta.Controls.Add(this.txtcorreo);
             this.PanelRestaurarCuenta.Controls.Add(this.Panel7);
             this.PanelRestaurarCuenta.Controls.Add(this.Button4);
@@ -561,7 +561,7 @@
             this.PanelRestaurarCuenta.Controls.Add(this.label5);
             this.PanelRestaurarCuenta.Controls.Add(this.label6);
             this.PanelRestaurarCuenta.Controls.Add(this.label7);
-            this.PanelRestaurarCuenta.Location = new System.Drawing.Point(12, 63);
+            this.PanelRestaurarCuenta.Location = new System.Drawing.Point(80, 32);
             this.PanelRestaurarCuenta.Name = "PanelRestaurarCuenta";
             this.PanelRestaurarCuenta.Size = new System.Drawing.Size(589, 408);
             this.PanelRestaurarCuenta.TabIndex = 618;
@@ -601,9 +601,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(156, 220);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 159);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(251, 155);
+            this.richTextBox1.Size = new System.Drawing.Size(18, 76);
             this.richTextBox1.TabIndex = 617;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -659,7 +659,7 @@
             this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button4.ForeColor = System.Drawing.Color.White;
-            this.Button4.Location = new System.Drawing.Point(5, 261);
+            this.Button4.Location = new System.Drawing.Point(5, 320);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(106, 35);
             this.Button4.TabIndex = 614;
@@ -733,7 +733,7 @@
             // 
             this.lblResultadoContraseña.AutoSize = true;
             this.lblResultadoContraseña.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblResultadoContraseña.Location = new System.Drawing.Point(76, 488);
+            this.lblResultadoContraseña.Location = new System.Drawing.Point(3, 393);
             this.lblResultadoContraseña.Name = "lblResultadoContraseña";
             this.lblResultadoContraseña.Size = new System.Drawing.Size(35, 13);
             this.lblResultadoContraseña.TabIndex = 619;
@@ -769,7 +769,7 @@
             this.datalistado_movimientos_validar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn3});
             this.datalistado_movimientos_validar.EnableHeadersVisualStyles = false;
-            this.datalistado_movimientos_validar.Location = new System.Drawing.Point(79, 12);
+            this.datalistado_movimientos_validar.Location = new System.Drawing.Point(93, 17);
             this.datalistado_movimientos_validar.Name = "datalistado_movimientos_validar";
             this.datalistado_movimientos_validar.ReadOnly = true;
             this.datalistado_movimientos_validar.RowHeadersVisible = false;
@@ -793,7 +793,7 @@
             // 
             this.lblcaja.AutoSize = true;
             this.lblcaja.BackColor = System.Drawing.Color.White;
-            this.lblcaja.Location = new System.Drawing.Point(7, 8);
+            this.lblcaja.Location = new System.Drawing.Point(3, 270);
             this.lblcaja.Name = "lblcaja";
             this.lblcaja.Size = new System.Drawing.Size(37, 13);
             this.lblcaja.TabIndex = 622;
@@ -801,7 +801,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(736, 5);
+            this.textBox1.Location = new System.Drawing.Point(905, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 20);
             this.textBox1.TabIndex = 623;
@@ -818,7 +818,7 @@
             this.datalistado_detalle_cierre_de_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.datalistado_detalle_cierre_de_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(373, 8);
+            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(6, 482);
             this.datalistado_detalle_cierre_de_caja.Name = "datalistado_detalle_cierre_de_caja";
             this.datalistado_detalle_cierre_de_caja.ReadOnly = true;
             this.datalistado_detalle_cierre_de_caja.RowHeadersVisible = false;
@@ -843,7 +843,7 @@
             this.IDUSUARIO.AutoSize = true;
             this.IDUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDUSUARIO.ForeColor = System.Drawing.Color.White;
-            this.IDUSUARIO.Location = new System.Drawing.Point(5, 34);
+            this.IDUSUARIO.Location = new System.Drawing.Point(57, 317);
             this.IDUSUARIO.Name = "IDUSUARIO";
             this.IDUSUARIO.Size = new System.Drawing.Size(100, 26);
             this.IDUSUARIO.TabIndex = 630;
@@ -853,7 +853,7 @@
             // 
             this.txtidcaja.AutoSize = true;
             this.txtidcaja.BackColor = System.Drawing.Color.White;
-            this.txtidcaja.Location = new System.Drawing.Point(260, -4);
+            this.txtidcaja.Location = new System.Drawing.Point(5, 364);
             this.txtidcaja.Name = "txtidcaja";
             this.txtidcaja.Size = new System.Drawing.Size(46, 13);
             this.txtidcaja.TabIndex = 631;
@@ -864,7 +864,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.ForeColor = System.Drawing.Color.White;
-            this.lblRol.Location = new System.Drawing.Point(50, -1);
+            this.lblRol.Location = new System.Drawing.Point(57, 355);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(100, 26);
             this.lblRol.TabIndex = 632;
@@ -874,7 +874,7 @@
             // 
             this.lblApertura_De_caja.AutoSize = true;
             this.lblApertura_De_caja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblApertura_De_caja.Location = new System.Drawing.Point(21, 493);
+            this.lblApertura_De_caja.Location = new System.Drawing.Point(3, 421);
             this.lblApertura_De_caja.Name = "lblApertura_De_caja";
             this.lblApertura_De_caja.Size = new System.Drawing.Size(35, 13);
             this.lblApertura_De_caja.TabIndex = 633;
@@ -896,7 +896,7 @@
             this.lblnombredeCajero.AutoSize = true;
             this.lblnombredeCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombredeCajero.ForeColor = System.Drawing.Color.White;
-            this.lblnombredeCajero.Location = new System.Drawing.Point(112, 514);
+            this.lblnombredeCajero.Location = new System.Drawing.Point(57, 393);
             this.lblnombredeCajero.Name = "lblnombredeCajero";
             this.lblnombredeCajero.Size = new System.Drawing.Size(100, 26);
             this.lblnombredeCajero.TabIndex = 635;
@@ -947,7 +947,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(394, -5);
+            this.progressBar1.Location = new System.Drawing.Point(6, 0);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(207, 23);
             this.progressBar1.TabIndex = 638;
@@ -958,6 +958,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1093, 624);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.datalistado_caja);
             this.Controls.Add(this.lblpermisodeCaja);
@@ -974,14 +976,12 @@
             this.Controls.Add(this.lblSerialPc);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblResultadoContraseña);
-            this.Controls.Add(this.PanelRestaurarCuenta);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.txtlogin);
             this.Controls.Add(this.labeldeB);
             this.Controls.Add(this.labeldePicture);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "SGM";
