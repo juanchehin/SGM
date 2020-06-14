@@ -98,6 +98,7 @@ namespace SGM.Modulos
         {
             DibujarUsuarios();
             panel3.Visible = false;
+            timer1.Start();
         }
 
         private void txtpassword_Paint(object sender, PaintEventArgs e)
@@ -223,7 +224,7 @@ namespace SGM.Modulos
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            mostrar_usuarios_por_correo();
+            mostrarUsuariosCorreo();
             richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblResultadoContraseña.Text);
             enviarCorreo("sgmtucuman@gmail.com", "luna3290", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
         }
@@ -263,7 +264,7 @@ namespace SGM.Modulos
 
         }
 
-        private void mostrar_usuarios_por_correo()
+        private void mostrarUsuariosCorreo()
         {
             try
             {
@@ -301,6 +302,74 @@ namespace SGM.Modulos
 
             }
 
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+            timer1.Stop();
+            try
+            {
+
+                ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
+                foreach (ManagementObject getserial in MOS.Get())
+                {
+                    lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
+
+                    MostrarCajaSerial();
+                    try
+                    {
+                        // txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString(); // Solo para pruebas
+                        lblcaja.Text = dataGridView1.SelectedCells[2].Value.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void MostrarCajaSerial()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+
+                ConexionMaestra.conexion.Open();
+                // con.Open();
+                SqlCommand cmd = new SqlCommand();
+                // cmd = new SqlCommand("select * from Usuarios WHERE Estado = 'ACTIVO'", ConexionMaestra.conexion);
+                // cmd.CommandType = CommandType.StoredProcedure;
+
+                // SqlConnection con = new SqlConnection();
+                // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                // con.Open();
+                // SqlCommand cmd = new SqlCommand();
+                // cmd = new SqlCommand("select * from USUARIO2 WHERE Estado = 'ACTIVO'", con);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", ConexionMaestra.conexion);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                ConexionMaestra.conexion.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
 
 
         }
