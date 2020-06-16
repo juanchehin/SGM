@@ -35,6 +35,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.PanelRestaurarCuenta = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtcorreo = new System.Windows.Forms.ComboBox();
+            this.Panel7 = new System.Windows.Forms.Panel();
+            this.txtpassenvi = new System.Windows.Forms.Label();
+            this.lblEstado_de_envio = new System.Windows.Forms.Label();
+            this.Button4 = new System.Windows.Forms.Button();
+            this.Button3 = new System.Windows.Forms.Button();
+            this.Panel12 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,20 +79,7 @@
             this.txtlogin = new System.Windows.Forms.Label();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.PanelRestaurarCuenta = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.txtcorreo = new System.Windows.Forms.ComboBox();
-            this.Panel7 = new System.Windows.Forms.Panel();
-            this.txtpassenvi = new System.Windows.Forms.Label();
-            this.lblEstado_de_envio = new System.Windows.Forms.Label();
-            this.Button4 = new System.Windows.Forms.Button();
-            this.Button3 = new System.Windows.Forms.Button();
-            this.Panel12 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblResultadoContraseña = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -102,14 +102,14 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.PanelRestaurarCuenta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.MenuStrip15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
-            this.PanelRestaurarCuenta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimientos_validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
@@ -163,6 +163,177 @@
             this.label2.Size = new System.Drawing.Size(662, 55);
             this.label2.TabIndex = 3;
             this.label2.Text = "¿Quien esta iniciando sesion?";
+            // 
+            // PanelRestaurarCuenta
+            // 
+            this.PanelRestaurarCuenta.Controls.Add(this.dataGridView1);
+            this.PanelRestaurarCuenta.Controls.Add(this.txtcorreo);
+            this.PanelRestaurarCuenta.Controls.Add(this.Panel7);
+            this.PanelRestaurarCuenta.Controls.Add(this.Button4);
+            this.PanelRestaurarCuenta.Controls.Add(this.Button3);
+            this.PanelRestaurarCuenta.Controls.Add(this.Panel12);
+            this.PanelRestaurarCuenta.Controls.Add(this.label5);
+            this.PanelRestaurarCuenta.Controls.Add(this.label6);
+            this.PanelRestaurarCuenta.Controls.Add(this.label7);
+            this.PanelRestaurarCuenta.Location = new System.Drawing.Point(80, 32);
+            this.PanelRestaurarCuenta.Name = "PanelRestaurarCuenta";
+            this.PanelRestaurarCuenta.Size = new System.Drawing.Size(589, 408);
+            this.PanelRestaurarCuenta.TabIndex = 618;
+            this.PanelRestaurarCuenta.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn1});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 55);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(246, 38);
+            this.dataGridView1.TabIndex = 622;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // txtcorreo
+            // 
+            this.txtcorreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtcorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcorreo.FormattingEnabled = true;
+            this.txtcorreo.Location = new System.Drawing.Point(156, 99);
+            this.txtcorreo.Name = "txtcorreo";
+            this.txtcorreo.Size = new System.Drawing.Size(318, 26);
+            this.txtcorreo.TabIndex = 616;
+            // 
+            // Panel7
+            // 
+            this.Panel7.Controls.Add(this.txtpassenvi);
+            this.Panel7.Controls.Add(this.lblEstado_de_envio);
+            this.Panel7.Location = new System.Drawing.Point(50, 151);
+            this.Panel7.Name = "Panel7";
+            this.Panel7.Size = new System.Drawing.Size(10, 10);
+            this.Panel7.TabIndex = 615;
+            // 
+            // txtpassenvi
+            // 
+            this.txtpassenvi.AutoSize = true;
+            this.txtpassenvi.BackColor = System.Drawing.Color.Transparent;
+            this.txtpassenvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassenvi.ForeColor = System.Drawing.Color.White;
+            this.txtpassenvi.Location = new System.Drawing.Point(21, 26);
+            this.txtpassenvi.Name = "txtpassenvi";
+            this.txtpassenvi.Size = new System.Drawing.Size(142, 20);
+            this.txtpassenvi.TabIndex = 602;
+            this.txtpassenvi.Text = "Correo electronico:";
+            // 
+            // lblEstado_de_envio
+            // 
+            this.lblEstado_de_envio.AutoSize = true;
+            this.lblEstado_de_envio.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstado_de_envio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado_de_envio.ForeColor = System.Drawing.Color.White;
+            this.lblEstado_de_envio.Location = new System.Drawing.Point(21, 13);
+            this.lblEstado_de_envio.Name = "lblEstado_de_envio";
+            this.lblEstado_de_envio.Size = new System.Drawing.Size(142, 20);
+            this.lblEstado_de_envio.TabIndex = 602;
+            this.lblEstado_de_envio.Text = "Correo electronico:";
+            // 
+            // Button4
+            // 
+            this.Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button4.FlatAppearance.BorderSize = 0;
+            this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button4.ForeColor = System.Drawing.Color.White;
+            this.Button4.Location = new System.Drawing.Point(5, 320);
+            this.Button4.Name = "Button4";
+            this.Button4.Size = new System.Drawing.Size(106, 35);
+            this.Button4.TabIndex = 614;
+            this.Button4.Text = "Cerrar";
+            this.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button4.UseVisualStyleBackColor = false;
+            this.Button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // Button3
+            // 
+            this.Button3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button3.FlatAppearance.BorderSize = 0;
+            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.ForeColor = System.Drawing.Color.White;
+            this.Button3.Location = new System.Drawing.Point(156, 167);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(318, 35);
+            this.Button3.TabIndex = 614;
+            this.Button3.Text = "Enviar";
+            this.Button3.UseVisualStyleBackColor = false;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // Panel12
+            // 
+            this.Panel12.BackColor = System.Drawing.Color.Silver;
+            this.Panel12.Location = new System.Drawing.Point(156, 131);
+            this.Panel12.Name = "Panel12";
+            this.Panel12.Size = new System.Drawing.Size(318, 1);
+            this.Panel12.TabIndex = 604;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(589, 37);
+            this.label5.TabIndex = 602;
+            this.label5.Text = "Restaurar Contraseña";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label6.Location = new System.Drawing.Point(153, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 15);
+            this.label6.TabIndex = 602;
+            this.label6.Text = "Con el que registraste tu cuenta";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(8, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 20);
+            this.label7.TabIndex = 602;
+            this.label7.Text = "Correo electronico:";
             // 
             // panel3
             // 
@@ -287,6 +458,7 @@
             this.tver.Name = "tver";
             this.tver.Size = new System.Drawing.Size(28, 24);
             this.tver.ToolTipText = "Ver contraseña";
+            this.tver.Click += new System.EventHandler(this.tver_Click);
             // 
             // tocultar
             // 
@@ -300,6 +472,7 @@
             this.tocultar.Size = new System.Drawing.Size(28, 24);
             this.tocultar.ToolTipText = "Ocultar contraseña";
             this.tocultar.Visible = false;
+            this.tocultar.Click += new System.EventHandler(this.tocultar_Click);
             // 
             // PictureBox4
             // 
@@ -550,55 +723,6 @@
             this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Eli.Name = "Eli";
             // 
-            // PanelRestaurarCuenta
-            // 
-            this.PanelRestaurarCuenta.Controls.Add(this.dataGridView1);
-            this.PanelRestaurarCuenta.Controls.Add(this.txtcorreo);
-            this.PanelRestaurarCuenta.Controls.Add(this.Panel7);
-            this.PanelRestaurarCuenta.Controls.Add(this.Button4);
-            this.PanelRestaurarCuenta.Controls.Add(this.Button3);
-            this.PanelRestaurarCuenta.Controls.Add(this.Panel12);
-            this.PanelRestaurarCuenta.Controls.Add(this.label5);
-            this.PanelRestaurarCuenta.Controls.Add(this.label6);
-            this.PanelRestaurarCuenta.Controls.Add(this.label7);
-            this.PanelRestaurarCuenta.Location = new System.Drawing.Point(80, 32);
-            this.PanelRestaurarCuenta.Name = "PanelRestaurarCuenta";
-            this.PanelRestaurarCuenta.Size = new System.Drawing.Size(589, 408);
-            this.PanelRestaurarCuenta.TabIndex = 618;
-            this.PanelRestaurarCuenta.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(246, 38);
-            this.dataGridView1.TabIndex = 622;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(6, 159);
@@ -606,128 +730,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(18, 76);
             this.richTextBox1.TabIndex = 617;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // txtcorreo
-            // 
-            this.txtcorreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtcorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreo.FormattingEnabled = true;
-            this.txtcorreo.Location = new System.Drawing.Point(156, 99);
-            this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(318, 26);
-            this.txtcorreo.TabIndex = 616;
-            // 
-            // Panel7
-            // 
-            this.Panel7.Controls.Add(this.txtpassenvi);
-            this.Panel7.Controls.Add(this.lblEstado_de_envio);
-            this.Panel7.Location = new System.Drawing.Point(50, 151);
-            this.Panel7.Name = "Panel7";
-            this.Panel7.Size = new System.Drawing.Size(10, 10);
-            this.Panel7.TabIndex = 615;
-            // 
-            // txtpassenvi
-            // 
-            this.txtpassenvi.AutoSize = true;
-            this.txtpassenvi.BackColor = System.Drawing.Color.Transparent;
-            this.txtpassenvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassenvi.ForeColor = System.Drawing.Color.White;
-            this.txtpassenvi.Location = new System.Drawing.Point(21, 26);
-            this.txtpassenvi.Name = "txtpassenvi";
-            this.txtpassenvi.Size = new System.Drawing.Size(142, 20);
-            this.txtpassenvi.TabIndex = 602;
-            this.txtpassenvi.Text = "Correo electronico:";
-            // 
-            // lblEstado_de_envio
-            // 
-            this.lblEstado_de_envio.AutoSize = true;
-            this.lblEstado_de_envio.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstado_de_envio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado_de_envio.ForeColor = System.Drawing.Color.White;
-            this.lblEstado_de_envio.Location = new System.Drawing.Point(21, 13);
-            this.lblEstado_de_envio.Name = "lblEstado_de_envio";
-            this.lblEstado_de_envio.Size = new System.Drawing.Size(142, 20);
-            this.lblEstado_de_envio.TabIndex = 602;
-            this.lblEstado_de_envio.Text = "Correo electronico:";
-            // 
-            // Button4
-            // 
-            this.Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button4.FlatAppearance.BorderSize = 0;
-            this.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button4.ForeColor = System.Drawing.Color.White;
-            this.Button4.Location = new System.Drawing.Point(5, 320);
-            this.Button4.Name = "Button4";
-            this.Button4.Size = new System.Drawing.Size(106, 35);
-            this.Button4.TabIndex = 614;
-            this.Button4.Text = "Cerrar";
-            this.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button4.UseVisualStyleBackColor = false;
-            this.Button4.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // Button3
-            // 
-            this.Button3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button3.FlatAppearance.BorderSize = 0;
-            this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button3.ForeColor = System.Drawing.Color.White;
-            this.Button3.Location = new System.Drawing.Point(156, 167);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(318, 35);
-            this.Button3.TabIndex = 614;
-            this.Button3.Text = "Enviar";
-            this.Button3.UseVisualStyleBackColor = false;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // Panel12
-            // 
-            this.Panel12.BackColor = System.Drawing.Color.Silver;
-            this.Panel12.Location = new System.Drawing.Point(156, 131);
-            this.Panel12.Name = "Panel12";
-            this.Panel12.Size = new System.Drawing.Size(318, 1);
-            this.Panel12.TabIndex = 604;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(589, 37);
-            this.label5.TabIndex = 602;
-            this.label5.Text = "Restaurar Contraseña";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label6.Location = new System.Drawing.Point(153, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 15);
-            this.label6.TabIndex = 602;
-            this.label6.Text = "Con el que registraste tu cuenta";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(8, 101);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 20);
-            this.label7.TabIndex = 602;
-            this.label7.Text = "Correo electronico:";
             // 
             // lblResultadoContraseña
             // 
@@ -959,6 +961,7 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1093, 624);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.datalistado_caja);
@@ -974,7 +977,6 @@
             this.Controls.Add(this.lblcaja);
             this.Controls.Add(this.datalistado_movimientos_validar);
             this.Controls.Add(this.lblSerialPc);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblResultadoContraseña);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.txtlogin);
@@ -989,6 +991,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.PanelRestaurarCuenta.ResumeLayout(false);
+            this.PanelRestaurarCuenta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Panel7.ResumeLayout(false);
+            this.Panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -997,11 +1004,6 @@
             this.MenuStrip15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
-            this.PanelRestaurarCuenta.ResumeLayout(false);
-            this.PanelRestaurarCuenta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.Panel7.ResumeLayout(false);
-            this.Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimientos_validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
