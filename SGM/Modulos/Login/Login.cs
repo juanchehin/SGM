@@ -26,6 +26,13 @@ namespace SGM.Modulos
             InitializeComponent();
 
         }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            dibujarUsuarios();
+            panel3.Visible = false;
+            timer1.Start();
+        }
+        // Muestra los usuarios activos en el panel, para hacer click sobre uno de ellos
         public void dibujarUsuarios()
         {
             ConexionMaestra.conexion.Open();
@@ -121,12 +128,7 @@ namespace SGM.Modulos
             panel1.Visible = false;
             mostrarPermisos();
         }
-        private void Login_Load(object sender, EventArgs e)
-        {
-            dibujarUsuarios();
-            panel3.Visible = false;
-            timer1.Start();
-        }
+
 
         private void txtpassword_Paint(object sender, PaintEventArgs e)
         {
@@ -148,7 +150,7 @@ namespace SGM.Modulos
                 ConexionMaestra.conexion.Open();
                 SqlCommand cmd = new SqlCommand();
                 // cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
+                // cmd.CommandType = CommandType.StoredProcedure;
 
                 da = new SqlDataAdapter("mostrarMovimientoCajaSerial", ConexionMaestra.conexion);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -178,7 +180,7 @@ namespace SGM.Modulos
             contar();
             try
             {
-                // IDUSUARIO.Text = datalistado.SelectedCells[1].Value.ToString();
+                IDUSUARIO.Text = datalistado.SelectedCells[1].Value.ToString();
                 // txtnombre.Text = datalistado.SelectedCells[2].Value.ToString();
             }
             catch
@@ -188,6 +190,7 @@ namespace SGM.Modulos
 
             if (contador > 0)
             {
+                Console.WriteLine("Entro en el contardor > 0");
                 listarAperturaDetalleCierreCaja();
                 contarAperturaDetalleCierreCaja();
                 
@@ -302,8 +305,10 @@ namespace SGM.Modulos
         private void contar()
         {
             int x;
+            Console.WriteLine("Entro en el contar");
 
             x = datalistado.Rows.Count;
+            Console.WriteLine("Contar x es :" + x);
             contador = (x);
 
         }
@@ -311,24 +316,30 @@ namespace SGM.Modulos
         {
             try
             {
+                Console.WriteLine("Entro en el try de cargar usuarios");
+
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
                 // SqlCommand cmd = new SqlCommand();
                 // cmd.CommandType = CommandType.StoredProcedure;
-                ConexionMaestra.conexion.Open();
+                // ConexionMaestra.conexion.Open();
 
                 da = new SqlDataAdapter("validarUsuario", ConexionMaestra.conexion);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 da.SelectCommand.Parameters.AddWithValue("@password", txtpassword.Text);
                 da.SelectCommand.Parameters.AddWithValue("@login", txtlogin.Text);
+                // Console.WriteLine("Entro en el try de cargar usuarios llego");
 
                 da.Fill(dt);
                 datalistado.DataSource = dt;
                 ConexionMaestra.conexion.Close();
+                // Console.WriteLine("Entro en el try de cargar usuarios ConexionMaestra.conexion.Close();");
+
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Entro en el catch de cargar usuarios");
                 MessageBox.Show(ex.Message);
 
             }
@@ -412,11 +423,11 @@ namespace SGM.Modulos
         {
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
+                ConexionMaestra.conexion.Open();
 
-                // SqlCommand com = new SqlCommand("insertarDetalleCierreCaja", ConexionMaestra.conexion);
-                // com.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("insertarDetalleCierreCaja", ConexionMaestra.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@fechaini", DateTime.Today);
                 cmd.Parameters.AddWithValue("@fechafin", DateTime.Today);
@@ -440,24 +451,7 @@ namespace SGM.Modulos
             {
                 MessageBox.Show(ex.Message);
             }
-}
-        private void Iniciar_sesion_correcto()
-    {
-    cargarusuarios();
-       contar();
-
-
-       if (contador > 0)
-       {
-           Caja.AperturaCaja formAperturaCaja = new Caja.AperturaCaja();
-
-           this.Hide();
-           formAperturaCaja.ShowDialog();
-           //formulario_apertura_de_caja.ShowDialog();
-       }
-
-    }
-
+        }
         private void mostrar_correos()
         {
             try
@@ -488,9 +482,6 @@ namespace SGM.Modulos
                 MessageBox.Show(ex.Message);
 
             }
-
-
-
         }
 
 
@@ -535,40 +526,7 @@ namespace SGM.Modulos
             }
 
         }
-        private void mostrarCajaserial()
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                // SqlConnection con = new SqlConnection();
-                // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                // con.Open();
-
-                ConexionMaestra.conexion.Open();
-                // con.Open();
-                // SqlCommand cmd = new SqlCommand();
-                // cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
-                // cmd.CommandType = CommandType.StoredProcedure;
-
-                da = new SqlDataAdapter("mostrarCajasSerialDisco", ConexionMaestra.conexion);
-
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
-                da.Fill(dt);
-                datalistado_caja.DataSource = dt;
-                ConexionMaestra.conexion.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-
-
-        }
+        
         private void mostrarUsuariosCorreo()
         {
             try
@@ -613,8 +571,6 @@ namespace SGM.Modulos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-
             timer1.Stop();
             try
             {
@@ -622,13 +578,13 @@ namespace SGM.Modulos
                 ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
                 foreach (ManagementObject getserial in MOS.Get())
                 {
-                    lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
+                    // lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
 
-                    MostrarCajaSerial();
+                    this.mostrarCajaSerial();
                     try
                     {
                         // txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString(); // Solo para pruebas
-                        lblcaja.Text = dataGridView1.SelectedCells[2].Value.ToString();
+                        // lblcaja.Text = dataGridView1.SelectedCells[1].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -642,7 +598,38 @@ namespace SGM.Modulos
             }
         }
 
-        private void MostrarCajaSerial()
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (progressBar1.Value < 100)
+            {
+                BackColor = Color.FromArgb(26, 26, 26);
+                progressBar1.Value = progressBar1.Value + 10;
+                // PictureBox2.Visible = true;
+
+            }
+            else
+            {
+                progressBar1.Value = 0;
+                timer2.Stop();
+                if (lblApertura_De_caja.Text == "Nuevo*****" & lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
+                {
+                    this.Hide();
+                    Caja.AperturaCaja frm = new Caja.AperturaCaja();
+                    frm.ShowDialog();
+                    this.Hide();
+                }
+                else
+                {
+                    this.Hide();
+                    Ventas.VentasMenuPrincipal frm = new Ventas.VentasMenuPrincipal();
+                    frm.ShowDialog();
+                    this.Hide();
+
+                }
+
+            }
+        }
+        private void mostrarCajaSerial()
         {
             try
             {
@@ -651,7 +638,7 @@ namespace SGM.Modulos
 
                 ConexionMaestra.conexion.Open();
                 // con.Open();
-                SqlCommand cmd = new SqlCommand();
+                // SqlCommand cmd = new SqlCommand();
                 // cmd = new SqlCommand("select * from Usuarios WHERE Estado = 'ACTIVO'", ConexionMaestra.conexion);
                 // cmd.CommandType = CommandType.StoredProcedure;
 
@@ -660,9 +647,9 @@ namespace SGM.Modulos
                 // con.Open();
                 // SqlCommand cmd = new SqlCommand();
                 // cmd = new SqlCommand("select * from USUARIO2 WHERE Estado = 'ACTIVO'", con);
-                SqlDataReader rdr = cmd.ExecuteReader();
+                // SqlDataReader rdr = cmd.ExecuteReader();
 
-                da = new SqlDataAdapter("mostrarCajaSerialDisco", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("mostrarCajasSerialDisco", ConexionMaestra.conexion);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
                 da.Fill(dt);
@@ -777,37 +764,6 @@ namespace SGM.Modulos
             MessageBox.Show("Usuario o contraseña Incorrectos", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (progressBar1.Value < 100)
-            {
-                BackColor = Color.FromArgb(26, 26, 26);
-                progressBar1.Value = progressBar1.Value + 10;
-                // PictureBox2.Visible = true;
-
-            }
-            else
-            {
-                progressBar1.Value = 0;
-                timer2.Stop();
-                if (lblApertura_De_caja.Text == "Nuevo*****" & lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
-                {
-                    this.Hide();
-                    Caja.AperturaCaja frm = new Caja.AperturaCaja();
-                    frm.ShowDialog();
-                    this.Hide();
-                }
-                else
-                {
-                    this.Hide();
-                    Ventas.VentasMenuPrincipal frm = new Ventas.VentasMenuPrincipal();
-                    frm.ShowDialog();
-                    this.Hide();
-
-                }
-
-            }
-        }
 
     }
 }
