@@ -34,7 +34,7 @@ namespace SGM.Modulos.Caja
             foreach (ManagementObject getserial in MOS.Get())
             {
                 lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
-                MostrarCajaSerial();
+                mostrarCajaSerial();
                 try
                 {
                     txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
@@ -50,16 +50,18 @@ namespace SGM.Modulos.Caja
         {
             try
             {
-                ConexionMaestra.conexion.Open();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("editarDineroCajaInicial", ConexionMaestra.conexion);
+                cmd = new SqlCommand("editarDineroCajaInicial", con);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdCaja", txtidcaja.Text);
+                cmd.Parameters.AddWithValue("@Id_caja", txtidcaja.Text);
                 cmd.Parameters.AddWithValue("@saldo", txtmonto.Text);
                 cmd.ExecuteNonQuery();
-                ConexionMaestra.conexion.Close();
-
+                con.Close();
+                
                 this.Hide();
                 Ventas.VentasMenuPrincipal frm = new Ventas.VentasMenuPrincipal();
                 frm.ShowDialog();
@@ -73,30 +75,22 @@ namespace SGM.Modulos.Caja
 
         }
 
-        private void MostrarCajaSerial()
+        private void mostrarCajaSerial()
         {
             try
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                // SqlConnection con = new SqlConnection();
-                // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                // con.Open();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
 
-                ConexionMaestra.conexion.Open();
-                // con.Open();
-                SqlCommand cmd = new SqlCommand();
-                // cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
-                // cmd.CommandType = CommandType.StoredProcedure;
-
-                da = new SqlDataAdapter("MostrarCajasSerialDisco", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("mostrarCajasSerialDisco", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
                 da.Fill(dt);
                 datalistado_caja.DataSource = dt;
-
-                ConexionMaestra.conexion.Close();
-
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -125,20 +119,66 @@ namespace SGM.Modulos.Caja
             }
         }
 
+        private void txtmonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //OnlyNumber(e, false);
+            //{
+            //    // Si se pulsa la tecla Intro, pasar al siguiente
+            //    //if( e.KeyChar == Convert.ToChar('\r') ){
+            //    if (e.KeyChar == '\r')
+            //    {
+            //        e.Handled = true;
+
+            //    }
+            //    else if (e.KeyChar == ',')
+            //    {
+            //        // si se pulsa en el punto se convertirá en coma
+            //        e.Handled = true;
+            //        SendKeys.Send(".");
+            //    }
+            //}
+            //CONEXION.Numeros_separadores.Separador_de_Numeros(txtmonto, e);
+            //if (Char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else if (Char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else if (char.IsSeparator('.'))
+            //{
+            //    e.Handled = false;
+
+            //}
+            //else if (e.KeyChar == ',')
+            //{
+            //    e.Handled = false;
+            //}
+            //else
+            //{
+            //    e.Handled = true;
+            //}
+
+            Conexion.NumerosSeparadores.separadorNumeros(txtmonto, e);
+        }
+
         private void ToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             try
             {
-
-                ConexionMaestra.conexion.Open();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
                 SqlCommand cmd = new SqlCommand();
 
-                cmd = new SqlCommand("editar_dinero_caja_inicial", ConexionMaestra.conexion);
+
+                cmd = new SqlCommand("editarDineroCajaInicial", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id_caja", txtidcaja.Text);
                 cmd.Parameters.AddWithValue("@saldo", 0);
                 cmd.ExecuteNonQuery();
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
                 this.Hide();
                 Ventas.VentasMenuPrincipal frm = new Ventas.VentasMenuPrincipal();

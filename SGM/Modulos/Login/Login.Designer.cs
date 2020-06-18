@@ -100,6 +100,8 @@
             this.datalistado_caja = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtnombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.PanelRestaurarCuenta.SuspendLayout();
@@ -113,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimientos_validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -954,12 +957,35 @@
             this.progressBar1.Size = new System.Drawing.Size(207, 23);
             this.progressBar1.TabIndex = 638;
             // 
+            // PictureBox2
+            // 
+            this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(30, 149);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(433, 540);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 639;
+            this.PictureBox2.TabStop = false;
+            this.PictureBox2.Visible = false;
+            // 
+            // txtnombre
+            // 
+            this.txtnombre.AutoSize = true;
+            this.txtnombre.BackColor = System.Drawing.Color.White;
+            this.txtnombre.Location = new System.Drawing.Point(3, 84);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(53, 13);
+            this.txtnombre.TabIndex = 640;
+            this.txtnombre.Text = "txtnombre";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1093, 624);
+            this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.richTextBox1);
@@ -984,6 +1010,7 @@
             this.Controls.Add(this.labeldePicture);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "SGM";
@@ -1007,6 +1034,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimientos_validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1084,5 +1112,7 @@
         private System.Windows.Forms.DataGridView datalistado_caja;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.ProgressBar progressBar1;
+        internal System.Windows.Forms.PictureBox PictureBox2;
+        private System.Windows.Forms.Label txtnombre;
     }
 }

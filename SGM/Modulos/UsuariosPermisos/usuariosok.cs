@@ -113,11 +113,12 @@ namespace SGM
                             try
                             {
                                 Console.WriteLine("Entro a btnGuardar_Click");
-                                // SqlConnection con = new SqlConnection();
-                                ConexionMaestra.conexion.Open();
-                                // con.Open();
-                                SqlCommand cmd = new SqlCommand();
-                                cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
+                            // SqlConnection con = new SqlConnection();
+                            SqlConnection con = new SqlConnection();
+                            con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand();
+                                cmd = new SqlCommand("insertarUsuario", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@NombresApellidos", txtnombre.Text);
                                 cmd.Parameters.AddWithValue("@Login", txtlogin.Text);
@@ -134,8 +135,7 @@ namespace SGM
                                 cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
 
                                 cmd.ExecuteNonQuery();
-                                // con.Close();
-                                ConexionMaestra.conexion.Close();
+                                con.Close();
                                 mostrar();
                                 panel4.Visible = false;
                             }
@@ -156,19 +156,16 @@ namespace SGM
         {
             try
             {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da;
-            // SqlConnection con = new SqlConnection();
-            // con.ConnectionString = ConexionMaestra.conexion.ToString();
-            // con.Open();
-            ConexionMaestra.conexion.Open();
-            Console.WriteLine("Entro a mostrar");
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
          
-            da = new SqlDataAdapter("mostrar_usuario", ConexionMaestra.conexion);
+            da = new SqlDataAdapter("mostrarUsuario", con);
             da.Fill(dt);
             datalistado.DataSource = dt;
-            // con.Close();
-            ConexionMaestra.conexion.Close();
+            con.Close();
                 Console.WriteLine("Entro a mostrar cerrar conexion");
                 datalistado.Columns[1].Visible = false;
                 datalistado.Columns[5].Visible = false;
@@ -183,11 +180,7 @@ namespace SGM
                 MessageBox.Show(ex.Message);
 
             }
-            finally
-            {
-                ConexionMaestra.conexion.Close();
-                Console.WriteLine("Entro a mostrar finally");
-            }
+            Conexion.TamañoAutomaticoDatatable.Multilinea(ref datalistado);
 
         }
 
@@ -197,15 +190,12 @@ namespace SGM
             {
                 try
                 {
-                    // SqlConnection con = new SqlConnection();
-                    // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                    // con.Open();
-
-                    // SqlConnection con = new SqlConnection();
-                    ConexionMaestra.conexion.Open();
-                    // con.Open();
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                    con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd = new SqlCommand("editar_usuario", ConexionMaestra.conexion);
+                    cmd = new SqlCommand("editar_usuario", con);
+
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idUsuario", lblId_usuario.Text);
                     cmd.Parameters.AddWithValue("@NombresApellidos", txtnombre.Text);
@@ -221,8 +211,8 @@ namespace SGM
                     cmd.Parameters.AddWithValue("@Icono", ms.GetBuffer());
                     cmd.Parameters.AddWithValue("@NombreIcono", lblnumeroIcono.Text);
                     cmd.ExecuteNonQuery();
-                    // con.Close();
-                    ConexionMaestra.conexion.Close();
+                    con.Close();
+                    
                     mostrar();
                     panel4.Visible = false;
                 }
@@ -390,23 +380,18 @@ namespace SGM
 
                                 try
                                 {
-                                    ConexionMaestra.conexion.Open();
-                                    // con.Open();
-                                    cmd = new SqlCommand("eliminar_usuario", ConexionMaestra.conexion);
+                                    SqlConnection con = new SqlConnection();
+                                    con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                                    con.Open();
+                                    cmd = new SqlCommand("eliminarUsuario", con);
                                     cmd.CommandType = CommandType.StoredProcedure;
-
-                                    // SqlConnection con = new SqlConnection();
-                                    // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                                    // con.Open();
-                                   // cmd = new SqlCommand("eliminar_usuario", con);
-                                    // cmd.CommandType = CommandType.StoredProcedure;
 
                                     cmd.Parameters.AddWithValue("@idusuario", onekey);
                                     cmd.Parameters.AddWithValue("@login", usuario);
                                     cmd.ExecuteNonQuery();
 
-                                    // con.Close();
-                                    ConexionMaestra.conexion.Close();
+                                    con.Close();
+                                    
 
                                 }
                                 catch (Exception ex)
@@ -456,21 +441,16 @@ namespace SGM
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                // SqlConnection con = new SqlConnection();
-                //con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                // con.Open();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
 
-                ConexionMaestra.conexion.Open();
-                // con.Open();
-                // cmd = new SqlCommand("eliminar_usuario", ConexionMaestra.conexion);
-                // cmd.CommandType = CommandType.StoredProcedure;
-
-                da = new SqlDataAdapter("buscar_usuario", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("buscarUsuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@letra", txtBuscar.Text);
                 da.Fill(dt);
                 datalistado.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
                 datalistado.Columns[1].Visible = false;
                 datalistado.Columns[5].Visible = false;
@@ -524,6 +504,11 @@ namespace SGM
         }
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void datalistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

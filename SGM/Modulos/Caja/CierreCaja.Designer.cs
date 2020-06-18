@@ -41,7 +41,7 @@
             // txtfechacierre
             // 
             this.txtfechacierre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfechacierre.Location = new System.Drawing.Point(347, 51);
+            this.txtfechacierre.Location = new System.Drawing.Point(180, 166);
             this.txtfechacierre.Name = "txtfechacierre";
             this.txtfechacierre.Size = new System.Drawing.Size(200, 20);
             this.txtfechacierre.TabIndex = 629;
@@ -58,7 +58,7 @@
             this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.Location = new System.Drawing.Point(347, 170);
+            this.datalistado_caja.Location = new System.Drawing.Point(180, 285);
             this.datalistado_caja.Name = "datalistado_caja";
             this.datalistado_caja.ReadOnly = true;
             this.datalistado_caja.RowHeadersVisible = false;
@@ -81,7 +81,7 @@
             // lblSerialPc
             // 
             this.lblSerialPc.AutoSize = true;
-            this.lblSerialPc.Location = new System.Drawing.Point(525, 149);
+            this.lblSerialPc.Location = new System.Drawing.Point(358, 264);
             this.lblSerialPc.Name = "lblSerialPc";
             this.lblSerialPc.Size = new System.Drawing.Size(35, 13);
             this.lblSerialPc.TabIndex = 626;
@@ -90,7 +90,7 @@
             // txtidcaja
             // 
             this.txtidcaja.AutoSize = true;
-            this.txtidcaja.Location = new System.Drawing.Point(525, 120);
+            this.txtidcaja.Location = new System.Drawing.Point(358, 235);
             this.txtidcaja.Name = "txtidcaja";
             this.txtidcaja.Size = new System.Drawing.Size(35, 13);
             this.txtidcaja.TabIndex = 627;
@@ -98,7 +98,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(618, 12);
+            this.button1.Location = new System.Drawing.Point(451, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 59);
             this.button1.TabIndex = 625;
@@ -118,6 +118,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CierreCaja";
             this.Text = "CierreCaja";
+            this.Load += new System.EventHandler(this.CierreCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

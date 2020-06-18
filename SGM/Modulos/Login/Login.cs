@@ -21,6 +21,8 @@ namespace SGM.Modulos
         int contador;
         int contadorCajas;
         int contador_Movimientos_de_caja;
+        public static String idusuariovariable;
+        public static String idcajavariable;
         public Login()
         {
             InitializeComponent();
@@ -31,14 +33,24 @@ namespace SGM.Modulos
             dibujarUsuarios();
             panel3.Visible = false;
             timer1.Start();
+            PictureBox2.Location = new Point((Width - PictureBox2.Width) / 2, (Height - PictureBox2.Height) / 2);
+            panel1.Location = new Point((Width - panel1.Width) / 2, (Height - panel1.Height) / 2);
+            PanelRestaurarCuenta.Location = new Point((Width - PanelRestaurarCuenta.Width) / 2, (Height - PanelRestaurarCuenta.Height) / 2);
+            panel2.Location = new Point((Width - panel2.Width) / 2, (Height - panel2.Height) / 2);
+
         }
         // Muestra los usuarios activos en el panel, para hacer click sobre uno de ellos
         public void dibujarUsuarios()
         {
-            ConexionMaestra.conexion.Open();
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Conexion.ConexionMaestra.conexion;
+            con.Open();
+            // SqlCommand cmd = new SqlCommand();
+
+            // ConexionMaestra.conexion.Open();
             // con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd = new SqlCommand("select * from Usuarios WHERE Estado = 'ACTIVO'", ConexionMaestra.conexion);
+            cmd = new SqlCommand("select * from Usuarios WHERE Estado = 'ACTIVO'", con);
             // cmd.CommandType = CommandType.StoredProcedure;
 
             // SqlConnection con = new SqlConnection();
@@ -86,7 +98,8 @@ namespace SGM.Modulos
                 b.Click += new EventHandler(mieventoLabel);
                 I1.Click += new EventHandler(miEventoImagen);
             }
-            ConexionMaestra.conexion.Close();
+            // ConexionMaestra.conexion.Close();
+            con.Close();
 
 
         }
@@ -95,16 +108,21 @@ namespace SGM.Modulos
             // SqlCommand cmd = new SqlCommand();
             // cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlCommand com = new SqlCommand("mostrarPermisosUsuarioRol", ConexionMaestra.conexion);
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Conexion.ConexionMaestra.conexion;
+
+            SqlCommand com = new SqlCommand("mostrarPermisosUsuarioRol", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("@LOGIN", txtlogin.Text);
             string importe;
             try
             {
-                ConexionMaestra.conexion.Open();
+                con.Open();
+                // ConexionMaestra.conexion.Open();
 
                 importe = Convert.ToString(com.ExecuteScalar());
-                ConexionMaestra.conexion.Close();
+                con.Close();
+                // ConexionMaestra.conexion.Close();
 
                 //lblRol.Text = importe;
             }
@@ -144,20 +162,22 @@ namespace SGM.Modulos
         {
             try
             {
-
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                ConexionMaestra.conexion.Open();
-                SqlCommand cmd = new SqlCommand();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
+
                 // cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
                 // cmd.CommandType = CommandType.StoredProcedure;
 
-                da = new SqlDataAdapter("mostrarMovimientoCajaSerial", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("mostrarMovimientoCajaSerial", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
                 da.Fill(dt);
                 datalistado_detalle_cierre_de_caja.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
+                // ConexionMaestra.conexion.Close();
 
             }
             catch (Exception ex)
@@ -178,10 +198,12 @@ namespace SGM.Modulos
         {
             cargarusuarios();
             contar();
+            Console.WriteLine("datalistado.ColumnCount", datalistado.ColumnCount);
+            Console.WriteLine("datalistado.SelectedCells[1].Value.ToString()" , datalistado.SelectedCells[0].Value.ToString());
             try
             {
                 IDUSUARIO.Text = datalistado.SelectedCells[1].Value.ToString();
-                // txtnombre.Text = datalistado.SelectedCells[2].Value.ToString();
+                txtnombre.Text = datalistado.SelectedCells[2].Value.ToString();
             }
             catch
             {
@@ -196,6 +218,7 @@ namespace SGM.Modulos
                 
                 if (contadorCajas == 0 & lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
                 {
+                    Console.WriteLine("Entro en el contadorCajas");
                     aperturaDetalleCierreCaja();
                     lblApertura_De_caja.Text = "Nuevo*****";
                     timer2.Start();
@@ -205,11 +228,13 @@ namespace SGM.Modulos
                 {
                     if (lblRol.Text != "Solo Ventas (no esta autorizado para manejar dinero)")
                     {
+                        Console.WriteLine("Entro en el mostrarMovimientosCajaSerialUsuario");
                         mostrarMovimientosCajaSerialUsuario();
-
+                        Console.WriteLine("Entro en el contarMostrarMovimientoscajaSerialUsuario");
                         contarMostrarMovimientoscajaSerialUsuario();
                         try
                         {
+                            Console.WriteLine("Entro en el try contarMostrarMovimientoscajaSerialUsuario");
                             lblusuario_queinicioCaja.Text = datalistado_detalle_cierre_de_caja.SelectedCells[1].Value.ToString();
                             lblnombredeCajero.Text = datalistado_detalle_cierre_de_caja.SelectedCells[2].Value.ToString();
                         }
@@ -272,18 +297,26 @@ namespace SGM.Modulos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
+
+                // DataTable dt = new DataTable();
+                // SqlDataAdapter da;
                 // SqlCommand cmd = new SqlCommand();
                 // cmd.CommandType = CommandType.StoredProcedure;
-                ConexionMaestra.conexion.Open();
+                // ConexionMaestra.conexion.Open();
 
-                da = new SqlDataAdapter("mostrarMovimientoCajaSerialUsuario", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("mostrarMovimientoCajaSerialUsuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
                 da.SelectCommand.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
                 da.Fill(dt);
                 datalistado_movimientos_validar.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
+
+                // ConexionMaestra.conexion.Close();
 
             }
             catch (Exception ex)
@@ -316,24 +349,30 @@ namespace SGM.Modulos
         {
             try
             {
-                Console.WriteLine("Entro en el try de cargar usuarios");
-
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
+
+                Console.WriteLine("Entro en el try de cargar usuarios");
+
+                // DataTable dt = new DataTable();
+                // SqlDataAdapter da;
                 // SqlCommand cmd = new SqlCommand();
                 // cmd.CommandType = CommandType.StoredProcedure;
                 // ConexionMaestra.conexion.Open();
 
-                da = new SqlDataAdapter("validarUsuario", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("validarUsuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 da.SelectCommand.Parameters.AddWithValue("@password", txtpassword.Text);
                 da.SelectCommand.Parameters.AddWithValue("@login", txtlogin.Text);
                 // Console.WriteLine("Entro en el try de cargar usuarios llego");
-
+                Console.WriteLine("dt es : " , dt);
                 da.Fill(dt);
                 datalistado.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
                 // Console.WriteLine("Entro en el try de cargar usuarios ConexionMaestra.conexion.Close();");
 
             }
@@ -350,18 +389,18 @@ namespace SGM.Modulos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                // SqlCommand cmd = new SqlCommand();
-                // cmd.CommandType = CommandType.StoredProcedure;
-                ConexionMaestra.conexion.Open();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
 
-                da = new SqlDataAdapter("select Correo from Usuarios where Estado='ACTIVO", ConexionMaestra.conexion);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter("select Correo from Usuarios where Estado='ACTIVO", con);
+                // da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 da.Fill(dt);
                 txtcorreo.DisplayMember = "Correo";
                 txtcorreo.ValueMember = "Correo";
                 txtcorreo.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -386,17 +425,19 @@ namespace SGM.Modulos
         {
             try
             {
-                string resultado;
+                // string resultado;
                 // SqlConnection con = new SqlConnection();
                 // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                SqlCommand da = new SqlCommand("buscarUsuarioCorreo", ConexionMaestra.conexion);
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                SqlCommand da = new SqlCommand("buscarUsuarioCorreo", con);
+
                 da.CommandType = CommandType.StoredProcedure;
                 da.Parameters.AddWithValue("@correo", txtcorreo.Text);
 
-                ConexionMaestra.conexion.Open();
-                // con.Open();
+                con.Open();
                 lblResultadoContraseña.Text = Convert.ToString(da.ExecuteScalar());
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
 
 
@@ -423,12 +464,14 @@ namespace SGM.Modulos
         {
             try
             {
-                ConexionMaestra.conexion.Open();
-
+                Console.WriteLine("Entro en el aperturaDetalleCierreCaja");
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertarDetalleCierreCaja", ConexionMaestra.conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd = new SqlCommand("insertarDetalleCierreCaja", con);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@fechaini", DateTime.Today);
                 cmd.Parameters.AddWithValue("@fechafin", DateTime.Today);
                 cmd.Parameters.AddWithValue("@fechacierre", DateTime.Today);
@@ -436,15 +479,16 @@ namespace SGM.Modulos
                 cmd.Parameters.AddWithValue("@egresos", "0.00");
                 cmd.Parameters.AddWithValue("@saldo", "0.00");
                 cmd.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
-                cmd.Parameters.AddWithValue("@totalcaluclado", "0.00");
+                cmd.Parameters.AddWithValue("@totalcalculado", "0.00");
                 cmd.Parameters.AddWithValue("@totalreal", "0.00");
-
                 cmd.Parameters.AddWithValue("@estado", "CAJA APERTURADA");
                 cmd.Parameters.AddWithValue("@diferencia", "0.00");
-                cmd.Parameters.AddWithValue("@id_caja", txtidcaja.Text);
-
+                // int x = Int32.Parse(txtidcaja.Text.ToString());
+                // Convert.ToInt32(txtidcaja.Text);
+                Console.WriteLine("txtidcaja.Text es : ", txtidcaja.Text);
+                cmd.Parameters.AddWithValue("@id_caja", txtidcaja.Text);    // DEbe haber una caja activa
                 cmd.ExecuteNonQuery();
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
             }
             catch (Exception ex)
@@ -458,23 +502,17 @@ namespace SGM.Modulos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                // SqlConnection con = new SqlConnection();
-                // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                // con.Open();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
 
-                ConexionMaestra.conexion.Open();
-                // con.Open();
-                // SqlCommand cmd = new SqlCommand();
-                // cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
-                // cmd.CommandType = CommandType.StoredProcedure;
-
-                da = new SqlDataAdapter("select Correo from Usuarios where Estado='ACTIVO'", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("select Correo from Usuarios where Estado='ACTIVO'", con);
 
                 da.Fill(dt);
                 txtcorreo.DisplayMember = "Correo";
                 txtcorreo.ValueMember = "Correo";
                 txtcorreo.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
             }
             catch (Exception ex)
@@ -489,7 +527,7 @@ namespace SGM.Modulos
         {
             mostrarUsuariosCorreo();
             richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblResultadoContraseña.Text);
-            enviarCorreo("sgmtucuman@gmail.com", "luna3290", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
+            enviarCorreo("sgmtucuman@gmail.com", "sgm@redmi", richTextBox1.Text, "Solicitud de Contraseña", txtcorreo.Text, "");
         }
 
         internal void enviarCorreo(string emisor, string password, string mensaje, string asunto, string destinatario, string ruta)
@@ -531,17 +569,11 @@ namespace SGM.Modulos
         {
             try
             {
-                string resultado;
-                // SqlConnection con = new SqlConnection();
-                //con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                // string resultado;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
 
-                ConexionMaestra.conexion.Open();
-                // con.Open();
-                // SqlCommand cmd = new SqlCommand();
-                // cmd = new SqlCommand("insertar_usuario", ConexionMaestra.conexion);
-                // cmd.CommandType = CommandType.StoredProcedure;
-
-                SqlCommand da = new SqlCommand("buscarUsuarioCorreo", ConexionMaestra.conexion);
+                SqlCommand da = new SqlCommand("buscarUsuarioCorreo", con);
                 da.CommandType = CommandType.StoredProcedure;
 
                 // da.CommandType = CommandType.StoredProcedure;
@@ -552,9 +584,9 @@ namespace SGM.Modulos
 
                 // con.Open();
                 lblResultadoContraseña.Text = Convert.ToString(da.ExecuteScalar());
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
-//                 con.Close();
+                //                 con.Close();
 
 
 
@@ -574,17 +606,18 @@ namespace SGM.Modulos
             timer1.Stop();
             try
             {
-
+                Console.WriteLine("ENtro en timer1_tick try");
                 ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
                 foreach (ManagementObject getserial in MOS.Get())
                 {
-                    // lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
+                    lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
 
                     this.mostrarCajaSerial();
                     try
                     {
-                        // txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString(); // Solo para pruebas
-                        // lblcaja.Text = dataGridView1.SelectedCells[1].Value.ToString();
+                        Console.WriteLine("datalistado_caja.SelectedCells[1].Value.ToString() : ", datalistado_caja.SelectedCells[1].Value.ToString());
+                        txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString(); // Solo para pruebas
+                        lblcaja.Text = dataGridView1.SelectedCells[1].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -635,26 +668,17 @@ namespace SGM.Modulos
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Conexion.ConexionMaestra.conexion;
+                con.Open();
 
-                ConexionMaestra.conexion.Open();
-                // con.Open();
-                // SqlCommand cmd = new SqlCommand();
-                // cmd = new SqlCommand("select * from Usuarios WHERE Estado = 'ACTIVO'", ConexionMaestra.conexion);
-                // cmd.CommandType = CommandType.StoredProcedure;
 
-                // SqlConnection con = new SqlConnection();
-                // con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                // con.Open();
-                // SqlCommand cmd = new SqlCommand();
-                // cmd = new SqlCommand("select * from USUARIO2 WHERE Estado = 'ACTIVO'", con);
-                // SqlDataReader rdr = cmd.ExecuteReader();
-
-                da = new SqlDataAdapter("mostrarCajasSerialDisco", ConexionMaestra.conexion);
+                da = new SqlDataAdapter("mostrarCajasSerialDisco", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
-                ConexionMaestra.conexion.Close();
+                con.Close();
 
             }
             catch (Exception ex)

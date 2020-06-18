@@ -244,7 +244,7 @@
             // lblSerialPc
             // 
             this.lblSerialPc.AutoSize = true;
-            this.lblSerialPc.Location = new System.Drawing.Point(190, 322);
+            this.lblSerialPc.Location = new System.Drawing.Point(24, 343);
             this.lblSerialPc.Name = "lblSerialPc";
             this.lblSerialPc.Size = new System.Drawing.Size(35, 13);
             this.lblSerialPc.TabIndex = 621;
@@ -253,7 +253,7 @@
             // txtidcaja
             // 
             this.txtidcaja.AutoSize = true;
-            this.txtidcaja.Location = new System.Drawing.Point(190, 293);
+            this.txtidcaja.Location = new System.Drawing.Point(42, 293);
             this.txtidcaja.Name = "txtidcaja";
             this.txtidcaja.Size = new System.Drawing.Size(35, 13);
             this.txtidcaja.TabIndex = 622;

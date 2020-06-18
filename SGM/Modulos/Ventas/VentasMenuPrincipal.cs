@@ -16,5 +16,10 @@ namespace SGM.Modulos.Ventas
         {
             InitializeComponent();
         }
+
+        private void VentasMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

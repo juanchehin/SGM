@@ -11,11 +11,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace SGM
+namespace SGM.Conexion
 {
     class ConexionMaestra
     {
-		public static SqlConnection conexion = new SqlConnection(@"Data source=DESKTOP\SQLEXPRESS;Initial Catalog=SGM;Integrated Security=True");    // Nombre servidor
+		public static string conexion = Convert.ToString(Conexion.Desencryptacion.checkServer());
+
+		/*public static SqlConnection conexion = new SqlConnection(@"Data source=DESKTOP\SQLEXPRESS;Initial Catalog=SGM;Integrated Security=True");    // Nombre servidor
 		
 
 		public static void abrir()
@@ -35,6 +37,6 @@ namespace SGM
 				MessageBox.Show("Se cerro la conexion");
 				conexion.Close();
 			}
-		}
+		}*/
 	}
 }
