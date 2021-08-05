@@ -9,6 +9,7 @@
 ## Base de datos
 
 - SQL server
+- Abrir con 'Microsoft SQL Server Management Studio'
 
 ## Otros
 
