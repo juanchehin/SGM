@@ -1,4 +1,4 @@
-# SGM
+# *** [Deprecated]*** SGM
 
 ## Para iniciar
 
