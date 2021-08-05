@@ -16,7 +16,7 @@ namespace SGM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SGM.Modulos.Productos.Productos());
+            Application.Run(new SGM.Modulos.Login());
         }
     }
 }

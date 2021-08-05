@@ -130,10 +130,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(46, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 35);
+            this.label1.Size = new System.Drawing.Size(94, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "SGM";
             // 
@@ -159,11 +159,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(111, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(662, 55);
+            this.label2.Size = new System.Drawing.Size(749, 63);
             this.label2.TabIndex = 3;
             this.label2.Text = "¿Quien esta iniciando sesion?";
             // 
@@ -363,10 +363,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Rockwell", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(85, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(316, 52);
+            this.label3.Size = new System.Drawing.Size(303, 54);
             this.label3.TabIndex = 0;
             this.label3.Text = "Iniciar Sesion";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -374,20 +374,20 @@
             // labeldePicture
             // 
             this.labeldePicture.AutoSize = true;
-            this.labeldePicture.Font = new System.Drawing.Font("Modern No. 20", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeldePicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeldePicture.Location = new System.Drawing.Point(46, 270);
             this.labeldePicture.Name = "labeldePicture";
-            this.labeldePicture.Size = new System.Drawing.Size(85, 35);
+            this.labeldePicture.Size = new System.Drawing.Size(94, 39);
             this.labeldePicture.TabIndex = 3;
             this.labeldePicture.Text = "SGM";
             // 
             // labeldeB
             // 
             this.labeldeB.AutoSize = true;
-            this.labeldeB.Font = new System.Drawing.Font("Modern No. 20", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeldeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeldeB.Location = new System.Drawing.Point(46, 204);
             this.labeldeB.Name = "labeldeB";
-            this.labeldeB.Size = new System.Drawing.Size(85, 35);
+            this.labeldeB.Size = new System.Drawing.Size(94, 39);
             this.labeldeB.TabIndex = 4;
             this.labeldeB.Text = "SGM";
             // 
@@ -850,9 +850,9 @@
             this.IDUSUARIO.ForeColor = System.Drawing.Color.White;
             this.IDUSUARIO.Location = new System.Drawing.Point(57, 317);
             this.IDUSUARIO.Name = "IDUSUARIO";
-            this.IDUSUARIO.Size = new System.Drawing.Size(100, 26);
+            this.IDUSUARIO.Size = new System.Drawing.Size(65, 26);
             this.IDUSUARIO.TabIndex = 630;
-            this.IDUSUARIO.Text = "Ada 369";
+            this.IDUSUARIO.Text = "SGM";
             // 
             // txtidcaja
             // 
@@ -871,9 +871,9 @@
             this.lblRol.ForeColor = System.Drawing.Color.White;
             this.lblRol.Location = new System.Drawing.Point(57, 355);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(100, 26);
+            this.lblRol.Size = new System.Drawing.Size(65, 26);
             this.lblRol.TabIndex = 632;
-            this.lblRol.Text = "Ada 369";
+            this.lblRol.Text = "SGM";
             // 
             // lblApertura_De_caja
             // 
@@ -892,9 +892,9 @@
             this.lblusuario_queinicioCaja.ForeColor = System.Drawing.Color.White;
             this.lblusuario_queinicioCaja.Location = new System.Drawing.Point(12, 572);
             this.lblusuario_queinicioCaja.Name = "lblusuario_queinicioCaja";
-            this.lblusuario_queinicioCaja.Size = new System.Drawing.Size(100, 26);
+            this.lblusuario_queinicioCaja.Size = new System.Drawing.Size(65, 26);
             this.lblusuario_queinicioCaja.TabIndex = 634;
-            this.lblusuario_queinicioCaja.Text = "Ada 369";
+            this.lblusuario_queinicioCaja.Text = "SGM";
             // 
             // lblnombredeCajero
             // 
@@ -903,9 +903,9 @@
             this.lblnombredeCajero.ForeColor = System.Drawing.Color.White;
             this.lblnombredeCajero.Location = new System.Drawing.Point(57, 393);
             this.lblnombredeCajero.Name = "lblnombredeCajero";
-            this.lblnombredeCajero.Size = new System.Drawing.Size(100, 26);
+            this.lblnombredeCajero.Size = new System.Drawing.Size(65, 26);
             this.lblnombredeCajero.TabIndex = 635;
-            this.lblnombredeCajero.Text = "Ada 369";
+            this.lblnombredeCajero.Text = "SGM";
             // 
             // lblpermisodeCaja
             // 
@@ -914,9 +914,9 @@
             this.lblpermisodeCaja.ForeColor = System.Drawing.Color.White;
             this.lblpermisodeCaja.Location = new System.Drawing.Point(118, 562);
             this.lblpermisodeCaja.Name = "lblpermisodeCaja";
-            this.lblpermisodeCaja.Size = new System.Drawing.Size(100, 26);
+            this.lblpermisodeCaja.Size = new System.Drawing.Size(65, 26);
             this.lblpermisodeCaja.TabIndex = 636;
-            this.lblpermisodeCaja.Text = "Ada 369";
+            this.lblpermisodeCaja.Text = "SGM";
             // 
             // datalistado_caja
             // 
